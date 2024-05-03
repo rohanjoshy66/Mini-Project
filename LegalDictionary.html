@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Legal Dictionary</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <style>
+        *, *:before, *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url('dictionary.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Righteous', cursive;
+            font-size: 48px;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #ff6e7f, #bfe9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-container input[type='text'] {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            background-color: rgba(50, 50, 50, 0.8);
+            color: #fff;
+            width: 300px;
+            margin-right: 10px;
+            transition: box-shadow 0.3s ease;
+        }
+        .search-container input[type='text']:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(44, 62, 80, 0.4);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            text-align: left;
+            padding: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(50, 50, 50, 0.8);
+        }
+        th {
+            background-color: rgba(44, 62, 80, 0.8);
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Righteous', cursive;
+            font-size: 18px;
+            padding: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        td {
+            color: #fff;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Legal Dictionary</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search Law..." onkeyup="searchLaw()" />
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Law</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="lawList"></tbody>
+        </table>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="LegalDictionary.js"></script>
+</body>
+</html>

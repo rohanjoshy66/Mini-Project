@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>LegalEase</title>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+   <style media="screen">
+       *,
+       *:before,
+       *:after {
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+       }
+
+       body {
+           background-color: #0e0e0e;
+           background-image: url('loginbg.jpg');
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-blend-mode: overlay;
+           height: 100vh;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+       }
+
+       .heading {
+           color: #ffffff;
+           font-family: "EB Garamond", serif;
+           font-size: 48px;
+           font-weight: bold;
+           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+           animation: headingAnimation 2s ease-in-out infinite alternate;
+           margin-bottom: 30px;
+       }
+
+       @keyframes headingAnimation {
+           from {
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+           }
+           to {
+               text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+           }
+       }
+
+       form {
+           height: 520px;
+           width: 400px;
+           background-color: rgba(0, 0, 0, 0.6);
+           border-radius: 10px;
+           backdrop-filter: blur(10px);
+           border: 2px solid rgba(255, 255, 255, 0.1);
+           box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+           padding: 20px 35px;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: flex-start;
+       }
+
+       form * {
+           font-family: 'EB Garamond', serif;
+           color: #ffffff;
+           letter-spacing: 0.5px;
+           outline: none;
+           border: none;
+       }
+
+       form h3 {
+           font-size: 28px;
+           font-weight: 500;
+           line-height: 36px;
+           text-align: center;
+       }
+
+       label {
+           display: block;
+           margin-top: 20px;
+           font-size: 14px;
+           font-weight: 500;
+       }
+
+       input {
+           display: block;
+           height: 40px;
+           width: 100%;
+           background-color: rgba(255, 255, 255, 0.07);
+           border-radius: 3px;
+           padding: 0 10px;
+           margin-top: 6px;
+           font-size: 12px;
+           font-weight: 300;
+       }
+
+       ::placeholder {
+           color: #e5e5e5;
+       }
+
+       button[type="submit"] {
+           margin-top: 30px;
+           width: 100%;
+           background-color: #8b4513;
+           color: #ffffff;
+           padding: 12px 0;
+           font-size: 16px;
+           font-weight: 600;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+       }
+
+       button[type="submit"]:hover {
+           background-color: #552a1f;
+       }
+
+       p {
+           margin-top: 20px;
+           text-align: center;
+           font-size: 12px;
+           color: #ffffff;
+       }
+
+       a {
+           color: #8b4513;
+           text-decoration: none;
+           font-weight: 500;
+       }
+
+       a:hover {
+           color: #552a1f;
+       }
+   </style>
+   <script type="module" src="signup.js" defer></script>
+</head>
+<body>
+   <h1 class="heading">LegalEase-AI</h1>
+   <form>
+       <h3>Sign Up</h3>
+
+       <label for="name">Enter Your Name</label>
+       <input type="text" placeholder="Name" id="name">
+
+       <label for="email">Enter Your Email</label>
+       <input type="email" placeholder="Email" id="email">
+
+       <label for="password">Create a Password</label>
+       <input type="password" placeholder="Password" id="password">
+
+       <button type="submit">Sign Up</button>
+
+       <p>Already have an account? <a href="login.html">Log In</a></p>
+   </form>
+</body>
+</html>
